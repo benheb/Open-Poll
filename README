@@ -4,6 +4,7 @@
 
 3. Include in index.php file the required JS:
 	createPoll.js
+	style.css
 	from jQuery:
 		jquery-1.4.4.min.js
 		jquery.ui.core.js
