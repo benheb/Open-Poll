@@ -2,18 +2,17 @@
 	var chart;
 	function update(id) {
 		var current = document.getElementById(id).value;
-		var url = "../pollsDb/pollsDb.php?"+id+"=" + current;
+		var url = "updatePoll.php?"+id+"=" + current;
 		$.ajax({
 			url: url,
 			success: function(data) {
 				count();
-				//animate();
 			}
 		});
 	}
 	
 	function count() {
-		$.getJSON('../pollsDb/pollsDb.php', function(data) {
+		$.getJSON('updatePoll.php', function(data) {
 			one = data['one'];
 			one = parseFloat(one);
 			two = data['two'];
@@ -38,13 +37,10 @@
 			seven = Math.round(seven/total * 100);
 	  
 			animate(one, two, three, four, five, six, seven, total);
-			//snowPoll(one, two, three, four, five, six, seven);		
 		});
 	}
 
 	function animate(one, two, three, four, five, six, seven, total) {
-	//$(function() {
-        /* object to save the initial positions of each box */
         var divinfo = {"initial": []};
         $('#q-container > div').each(function(){
             var $this = $(this);
@@ -56,7 +52,6 @@
             divinfo.initial.push(initial);
         });
 
-        //$('#q-container div').bind('click',function(e){
 	        var $this         = $(this);
             $('#q-container > div').each(function(){
        	    	var $ele = $(this);
@@ -68,12 +63,10 @@
                 	$(this).hide();
                 	//count();
 					$('#q-container').hide();
-                	snowPoll(one, two, three, four, five, six, seven, total);
+                	buildPoll(one, two, three, four, five, six, seven, total);
                 });
             });
        		e.preventDefault();
-        //});
-    //});
 	};
 		
 	Highcharts.setOptions({
@@ -85,7 +78,7 @@
 		}
 	});
 	
-	function snowPoll(one, two, three, four, five, six, seven, total) {
+	function buildPoll(one, two, three, four, five, six, seven, total) {
 		$('#poll-res').fadeIn(3000);
 		chart = new Highcharts.Chart({
 			chart: {
