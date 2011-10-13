@@ -1,0 +1,15 @@
+1. Setup mysql database to have one row and x number of columns (however many questions in poll).
+
+2. Configure updatePoll.php with database location, name, and password.
+
+3. Include in index.php file the required JS:
+	createPoll.js
+	from jQuery:
+		jquery-1.4.4.min.js
+		jquery.ui.core.js
+		jquery.easing.1.3.js
+		jquery.core.js
+
+4. Load index.html in your browser! 
+
+5. Demo: http://www.bheberto.com/devblog.php
