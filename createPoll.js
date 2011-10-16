@@ -2,7 +2,7 @@
   var chart;
   function update(id) {
     var current = document.getElementById(id).value;
-    var url = "../pollsDb/pollsDb.php?"+id+"=" + current;
+    var url = "updatePoll.php?"+id+"=" + current;
     $.ajax({
       url: url,
       success: function(data) {
@@ -12,7 +12,7 @@
   }
   
   function count() {
-    $.getJSON('../pollsDb/pollsDb.php', function(data) {
+    $.getJSON('updatePoll.php', function(data) {
       one = parseFloat(data['one']);
       two = parseFloat(data['two']);
       three = parseFloat(data['three']);
