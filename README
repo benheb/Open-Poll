@@ -11,6 +11,8 @@
 		jquery.easing.1.3.js
 		jquery.core.js
 
-4. Load index.html in your browser! 
+4. Load index.html in your browser! i
 
-5. Demo: http://www.bheberto.com/devblog.php?id=5 
+5. Style poll questions using the style.css, and/or change to be traditional poll (i.e. radio buttons).
+
+6. Demo: http://www.bheberto.com/devblog.php?id=5 
